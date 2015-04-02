@@ -1,7 +1,7 @@
 Basic Usage
 ===========
 
-Define a `tests` alias in your console config. For example, for the `basic` application template, this should be added
+Define a `tests` alias in your console config. For example, for the `basic` project template, this should be added
 to the `console.php` configuration: `Yii::setAlias('tests', __DIR__ . '/../tests');`
 To start using this command you need to be familiar (read guide) with the [Faker](https://github.com/fzaninotto/Faker) library and
 generate fixture template files, according to the given format:
