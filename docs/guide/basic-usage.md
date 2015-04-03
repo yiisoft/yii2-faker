@@ -7,7 +7,7 @@ To start using this command you need to be familiar (read guide) with the [Faker
 generate fixture template files, according to the given format:
 
 ```php
-// users.php file under template path (by default @tests/unit/templates/fixtures)
+// users.php file under the template path (by default @tests/unit/templates/fixtures)
 /**
  * @var $faker \Faker\Generator
  * @var $index integer
@@ -33,22 +33,22 @@ In this script, you can use the following two predefined variables:
 With such a template file, you can generate your fixtures using the commands like the following:
 
 ```
-# generate fixtures from user fixture template
-php yii fixture/generate user
+# generate fixtures from users fixture template
+php yii fixture/generate users
 
 # to generate several fixture data files
-php yii fixture/generate user profile team
+php yii fixture/generate users profiles teams
 ```
 
-In the code above `users` is template name. After running this command, a new file with the same template name
-will be created under the fixture path in the `@tests/unit/fixtures`) folder.
+In the code above `users` is a template name. After running this command, a new file with the same template name
+will be created under the fixture path (`@tests/unit/fixtures` folder).
 
 ```
 php yii fixture/generate-all
 ```
 
-This command will generate fixtures for all template files that are stored under template path and 
-store fixtures under fixtures path with file names same as templates names.
+This command will generate fixtures for all template files that are stored under the template path and 
+store fixtures under the fixtures path with file names same as templates names.
 You can specify how many fixtures per file you need by the `--count` option. In the code below we generate
 all fixtures and in each file there will be 3 rows (fixtures).
 
@@ -59,7 +59,7 @@ You can specify different options of this command:
 
 ```
 # generate fixtures in russian language
-php yii fixture/generate User --count=5 --language='ru_RU'
+php yii fixture/generate users --count=5 --language='ru_RU'
 
 # read templates from the other path
 php yii fixture/generate-all --templatePath='@app/path/to/my/custom/templates'
@@ -71,10 +71,10 @@ php yii fixture/generate-all --fixtureDataPath='@tests/acceptance/fixtures/data'
 You can see all available templates by running command:
 
 ```
-# list all templates under default template path (i.e. '@tests/unit/templates/fixtures')
+# list all templates under the default template path (i.e. '@tests/unit/templates/fixtures')
 php yii fixture/templates
 
-# list all templates under specified template path
+# list all templates under the specified template path
 php yii fixture/templates --templatePath='@app/path/to/my/custom/templates'
 ```
 
