@@ -1,6 +1,35 @@
 基本的な使用方法
 ================
 
+```Faker\Factory::create()``` を使って、faker ジェネレータを作成して初期化します。
+この faker ジェネレータのプロパティの中から、あなたが必要とするデータのタイプを指定する名前のものを選んでアクセスすると、疑似データを生成することが出来ます。
+
+```php
+
+// factory を使って Faker\Generator のインスタンスを作成する
+$faker = Faker\Factory::create();
+
+// プロパティにアクセスして、データを生成する
+echo $faker->name;
+  // 'Lucy Cechtelar';
+echo $faker->address;
+  // "426 Jordy Lodge
+  // Cartwrightshire, SC 88120-6700"
+echo $faker->text;
+  // Sint velit eveniet. Rerum atque repellat voluptatem quia rerum. Numquam excepturi
+  // beatae sint laudantium consequatur. Magni occaecati itaque sint et sit tempore. Nesciunt
+  // amet quidem. Iusto deleniti cum autem ad quia aperiam.
+  // A consectetur quos aliquam. In iste aliquid et aut similique suscipit. Consequatur qui
+  // quaerat iste minus hic expedita. Consequuntur error magni et laboriosam. Aut aspernatur
+  // voluptatem sit aliquam. Dolores voluptatum est.
+  // Aut molestias et maxime. Fugit autem facilis quos vero. Eius quibusdam possimus est.
+  // Ea quaerat et quisquam. Deleniti sunt quam. Adipisci consequatur id in occaecati.
+  // Et sint et. Ut ducimus quod nemo ab voluptatum.
+```
+
+テストでの使用方法
+------------------
+
 `tests` というエイリアスをコンソールの構成情報で定義してください。
 例えば、`basic` プロジェクトテンプレートであれば、`Yii::setAlias('tests', __DIR__ . '/../tests');` を `console.php` 構成情報ファイルに追加します。
 このコマンドを使い始めるためには、[Faker](https://github.com/fzaninotto/Faker) ライブラリに慣れ親しんで (ガイドを読んでください)、指定された形式に従ってフィクスチャテンプレートファイルを生成しなければなりません。
