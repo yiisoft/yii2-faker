@@ -5,6 +5,8 @@ This extension provides a [`Faker`](https://github.com/fzaninotto/Faker) fixture
 
 For license information check the [LICENSE](LICENSE.md)-file.
 
+Documentation is at [docs/guide/README.md](docs/guide/README.md).
+
 [![Latest Stable Version](https://poser.pugx.org/yiisoft/yii2-faker/v/stable.png)](https://packagist.org/packages/yiisoft/yii2-faker)
 [![Total Downloads](https://poser.pugx.org/yiisoft/yii2-faker/downloads.png)](https://packagist.org/packages/yiisoft/yii2-faker)
 [![Build Status](https://travis-ci.org/yiisoft/yii2-faker.svg?branch=master)](https://travis-ci.org/yiisoft/yii2-faker)
