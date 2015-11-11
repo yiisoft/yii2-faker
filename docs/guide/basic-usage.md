@@ -30,7 +30,7 @@ Testing
 -----------
 
 Define a `tests` alias in your console config. For example, for the `basic` project template, this should be added
-to the `console.php` configuration: `Yii::setAlias('tests', __DIR__ . '/../tests');`
+to the `console.php` configuration: `Yii::setAlias('tests', dirname(__DIR__) . '/tests/codeception');`
 To start using this command you need to be familiar (read guide) with the [Faker](https://github.com/fzaninotto/Faker) library and
 generate fixture template files, according to the given format:
 
@@ -87,7 +87,7 @@ You can specify different options of this command:
 
 ```
 # generate fixtures in russian language
-php yii fixture/generate users --count=5 --language='ru_RU'
+php yii fixture/generate users --count=5 --language="ru_RU"
 
 # read templates from the other path
 php yii fixture/generate-all --templatePath='@app/path/to/my/custom/templates'
