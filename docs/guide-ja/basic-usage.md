@@ -31,7 +31,7 @@ echo $faker->text;
 ------------------
 
 `tests` というエイリアスをコンソールの構成情報で定義してください。
-例えば、`basic` プロジェクトテンプレートであれば、`Yii::setAlias('tests', __DIR__ . '/../tests');` を `console.php` 構成情報ファイルに追加します。
+例えば、`basic` プロジェクトテンプレートであれば、`Yii::setAlias('tests', dirname(__DIR__) . '/tests/codeception');` を `console.php` 構成情報ファイルに追加します。
 このコマンドを使い始めるためには、[Faker](https://github.com/fzaninotto/Faker) ライブラリに慣れ親しんで (ガイドを読んでください)、指定された形式に従ってフィクスチャテンプレートファイルを生成しなければなりません。
 
 ```php
@@ -89,7 +89,7 @@ php yii fixture/generate-all --count=3
 
 ```
 # ロシア語でフィクスチャを生成する
-php yii fixture/generate users --count=5 --language='ru_RU'
+php yii fixture/generate users --count=5 --language="ru_RU"
 
 # 他のパスからテンプレートを読む
 php yii fixture/generate-all --templatePath='@app/path/to/my/custom/templates'
