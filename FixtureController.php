@@ -175,7 +175,10 @@ class FixtureController extends \yii\console\controllers\FixtureController
             'templatePath', 'language', 'fixtureDataPath', 'count'
         ]);
     }
-
+    
+    /**
+     * @inheritdoc
+     */
     public function beforeAction($action)
     {
         if (parent::beforeAction($action)) {
