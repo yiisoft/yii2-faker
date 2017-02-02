@@ -4,6 +4,7 @@ Yii Framework 2 faker extension Change Log
 2.0.4 under development
 -----------------------
 
+- Enh #22: Made `FixtureController` private methods protected for better class extensibility (samdark)
 
 2.0.3 March 01, 2015
 --------------------
