@@ -375,7 +375,9 @@ class FixtureController extends \yii\console\controllers\FixtureController
         $foundTemplates = [];
 
         foreach ($files as $fileName) {
-            $foundTemplates[] = basename($fileName, '.php');
+            $relativeName = str_replace(Yii::getAlias($this->templatePath) . '/', "", $fileName);   // strip templatePath from current template's full path
+            $relativeName = dirname($relativeName) . '/' . basename($relativeName,'.php');          // strip extension
+            $foundTemplates[] = $relativeName;
         }
 
         return $foundTemplates;
@@ -455,7 +457,12 @@ class FixtureController extends \yii\console\controllers\FixtureController
 
         $content = $this->exportFixtures($fixtures);
 
-        file_put_contents($fixtureDataPath . '/'. $templateName . '.php', $content);
+        $dataFile = $fixtureDataPath . '/'. $templateName . '.php'; // data file full path
+        $dataFileDir = dirname($dataFile);                          // data file directory
+        if(!file_exists($dataFileDir)) {                            // if dir doesn't exist -
+            FileHelper::createDirectory($dataFileDir);              // create it
+        }
+        file_put_contents($dataFile, $content);
     }
 
     /**
