@@ -5,6 +5,7 @@ Yii Framework 2 faker extension Change Log
 -----------------------
 
 - Enh #22: Made `FixtureController` private methods protected for better class extensibility (samdark)
+- Enh #24: Added support for fixture templates in subdirectories (d1rtyf1ng3rs)
 
 2.0.3 March 01, 2015
 --------------------
