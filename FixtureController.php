@@ -367,7 +367,8 @@ class FixtureController extends \yii\console\controllers\FixtureController
 
         foreach ($files as $fileName) {
             $relativeName = str_replace(Yii::getAlias($this->templatePath) . '/', "", $fileName);   // strip templatePath from current template's full path
-            $relativeName = dirname($relativeName) . '/' . basename($relativeName,'.php');          // strip extension
+            $relativeDir = dirname($relativeName) == '.' ? '' : dirname($relativeName) . '/';
+            $relativeName = $relativeDir . basename($relativeName,'.php');          // strip extension
             $foundTemplates[] = $relativeName;
         }
 
