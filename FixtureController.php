@@ -455,7 +455,7 @@ class FixtureController extends \yii\console\controllers\FixtureController
         $fixtures = [];
 
         for ($i = 0; $i < $this->count; $i++) {
-            $fixtures[$i] = $this->generateFixture($templatePath . '/' . $templateName . '.php', $i);
+            $fixtures[$templateName . $i] = $this->generateFixture($templatePath . '/' . $templateName . '.php', $i);
         }
 
         $content = $this->exportFixtures($fixtures);
