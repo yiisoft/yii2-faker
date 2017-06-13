@@ -134,3 +134,19 @@ You can use it by adding it to the `$providers` property of the current command.
     ],
 ]
 ```
+
+
+Yii 2 Advanced Template
+-----------------------
+ 
+If you want to run faker in the Yii 2 advanced template, you need to set `templatePath` and `fixtureDataPath`. For example if you want to setup common fixtures, use the following config in `console/config/main.php`:
+
+```php
+'controllerMap' => [
+    'fixture' => [
+        'class' => 'yii\faker\FixtureController',
+        'templatePath' => '@common/tests/templates/fixtures',
+        'fixtureDataPath' => '@common/tests/fixtures/data',
+    ],
+]
+```
