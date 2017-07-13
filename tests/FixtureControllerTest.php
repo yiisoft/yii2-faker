@@ -56,7 +56,7 @@ class FixtureControllerTest extends TestCase
 
         $generatedData = require Yii::getAlias('@runtime/faker/user.php');
         $this->assertCount(2, $generatedData, 'by default only 2 fixtures should be generated');
-        
+
         foreach ($generatedData as $fixtureData) {
             $this->assertNotNull($fixtureData['username'],  'generated "username" should not be empty');
             $this->assertNotNull($fixtureData['email'],     'generated "email" should not be empty');
@@ -136,7 +136,7 @@ class FixtureControllerTest extends TestCase
         $this->assertFileExists($filename, 'fixture template file should be generated');
 
         $generatedData = require Yii::getAlias('@runtime/faker/profile.php');
-        $this->assertEquals(1, preg_match('/^[а-яё]*$/iu', $generatedData[0]['first_name']), 'generated value should be in ru-RU language but is: ' . $generatedData[0]['first_name']);
+        $this->assertEquals(1, preg_match('/^[а-яё]*$/iu', $generatedData['profile0']['first_name']), 'generated value should be in ru-RU language but is: ' . $generatedData['profile0']['first_name']);
     }
 
     public function testGenerateAll()

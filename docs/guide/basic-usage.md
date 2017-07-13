@@ -75,7 +75,7 @@ will be created under the fixture path (`@tests/unit/fixtures` folder).
 php yii fixture/generate-all
 ```
 
-This command will generate fixtures for all template files that are stored under the template path and 
+This command will generate fixtures for all template files that are stored under the template path and
 store fixtures under the fixtures path with file names same as templates names.
 You can specify how many fixtures per file you need by the `--count` option. In the code below we generate
 all fixtures and in each file there will be 3 rows (fixtures).
@@ -138,7 +138,7 @@ You can use it by adding it to the `$providers` property of the current command.
 
 Yii 2 Advanced Template
 -----------------------
- 
+
 If you want to run faker in the Yii 2 advanced template, you need to set `templatePath` and `fixtureDataPath`. For example if you want to setup common fixtures, use the following config in `console/config/main.php`:
 
 ```php
