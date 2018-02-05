@@ -8,6 +8,7 @@ Yii Framework 2 faker extension Change Log
 - Enh #24: Added support for fixture templates in subdirectories (d1rtyf1ng3rs)
 - Enh #28: `FixtureController::generateFixtureFile()` now uses `$templateName` to index fixtures for easier debug (drsdre)
 - Chg: Switched to asset-packagist
+- Bug #29: Fixed `FixtureController::findTemplatesFiles()` trim `$templatePath` from `$fileName` correctly via `DIRECTORY_SEPARATOR` (ofixone)
 
 2.0.3 March 01, 2015
 --------------------
