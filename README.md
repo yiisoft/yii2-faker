@@ -12,8 +12,8 @@ For license information check the [LICENSE](LICENSE.md)-file.
 
 Documentation is at [docs/guide/README.md](docs/guide/README.md).
 
-[![Latest Stable Version](https://poser.pugx.org/yiisoft/yii2-faker/v/stable.png)](https://packagist.org/packages/yiisoft/yii2-faker)
-[![Total Downloads](https://poser.pugx.org/yiisoft/yii2-faker/downloads.png)](https://packagist.org/packages/yiisoft/yii2-faker)
+[![Latest Stable Version](https://img.shields.io/packagist/v/yiisoft/yii2-faker.svg)](https://packagist.org/packages/yiisoft/yii2-faker)
+[![Total Downloads](https://img.shields.io/packagist/dt/yiisoft/yii2-faker.svg)](https://packagist.org/packages/yiisoft/yii2-faker)
 [![Build Status](https://travis-ci.org/yiisoft/yii2-faker.svg?branch=master)](https://travis-ci.org/yiisoft/yii2-faker)
 
 
