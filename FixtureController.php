@@ -207,7 +207,7 @@ class FixtureController extends \yii\console\controllers\FixtureController
     /**
      * Generates fixtures and fill them with Faker data.
      * For example,
-     * 
+     *
      * ~~~
      * //generate fixtures in russian language
      * yii fixture/generate user --count=5 --language=ru_RU
@@ -215,7 +215,7 @@ class FixtureController extends \yii\console\controllers\FixtureController
      * //generate several fixtures
      * yii fixture/generate user profile team
      * ~~~
-     * 
+     *
      * @throws \yii\base\InvalidParamException
      * @throws \yii\console\Exception
      */
@@ -434,7 +434,7 @@ class FixtureController extends \yii\console\controllers\FixtureController
     /**
      * Generates fixture from given template
      * @param string $_template_ the fixture template file
-     * @param integer $index the current fixture index
+     * @param int $index the current fixture index
      * @return array fixture
      */
     public function generateFixture($_template_, $index)
@@ -474,7 +474,7 @@ class FixtureController extends \yii\console\controllers\FixtureController
     /**
      * Prompts user with message if he confirm generation with given fixture templates files.
      * @param array $files
-     * @return boolean
+     * @return bool
      */
     public function confirmGeneration($files)
     {
