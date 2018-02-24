@@ -145,7 +145,7 @@ class FixtureController extends \yii\console\controllers\FixtureController
     /**
      * @var string Alias to the fixture data path, where data files should be written.
      */
-    public $fixtureDataPath = '@tests/unit/fixtures/data';
+    public $fixtureDataPath = '@tests/_data';
     /**
      * @var string Language to use when generating fixtures data.
      */

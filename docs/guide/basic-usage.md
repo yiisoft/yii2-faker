@@ -69,14 +69,14 @@ php yii fixture/generate users profiles teams
 ```
 
 In the code above `users` is a template name. After running this command, a new file with the same template name
-will be created under the fixture path (`@tests/unit/fixtures` folder).
+will be created under the fixture data path (defaults to `@tests/_data` folder).
 
 ```
 php yii fixture/generate-all
 ```
 
 This command will generate fixtures for all template files that are stored under the template path and
-store fixtures under the fixtures path with file names same as templates names.
+store fixtures under the fixture data path with file names same as templates names.
 You can specify how many fixtures per file you need by the `--count` option. In the code below we generate
 all fixtures and in each file there will be 3 rows (fixtures).
 

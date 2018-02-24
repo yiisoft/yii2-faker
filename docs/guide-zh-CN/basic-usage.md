@@ -65,7 +65,7 @@ php yii fixture/generate users
 php yii fixture/generate users profiles teams
 ```
 
-在上面的代码中 `users` 是假数据模板的模板名称。运行上面的命令后，假数据会在假数据目录中生成 (默认在 `@tests/unit/fixtures` 文件夹)。
+在上面的代码中 `users` 是假数据模板的模板名称。运行上面的命令后，假数据会在假数据目录中生成 (默认在 `@tests/_data` 文件夹)。
 
 ```
 php yii fixture/generate-all
