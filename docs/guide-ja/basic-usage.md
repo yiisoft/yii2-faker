@@ -71,7 +71,7 @@ php yii fixture/generate users profiles teams
 ```
 
 上記のコードで `users` がテンプレートの名前です。
-このコマンドを実行した後、テンプレートと同じ名前のファイルがフィクスチャパス (`@tests/unit/fixtures` フォルダ) に生成されます。
+このコマンドを実行した後、テンプレートと同じ名前のファイルがフィクスチャパス (`@tests/_data` フォルダ) に生成されます。
 
 ```
 php yii fixture/generate-all
