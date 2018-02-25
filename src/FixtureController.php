@@ -35,7 +35,7 @@ use yii\helpers\VarDumper;
  * generate fixtures template files, according to the given format:
  *
  * ```php
- * // users.php file under template path (by default @tests/unit/templates/fixtures)
+ * // users.php file under template path (by default @tests/fixtures/templates)
  * return [
  *     'name' => $faker->firstName,
  *     'phone' => $faker->phoneNumber,
@@ -90,13 +90,13 @@ use yii\helpers\VarDumper;
  * yii fixture/generate-all --templatePath=@app/path/to/my/custom/templates
  *
  * //generate fixtures into other folders
- * yii fixture/generate-all --fixtureDataPath=@tests/unit/fixtures/subfolder1/subfolder2/subfolder3
- * ```
+ * yii fixture/generate-all --fixtureDataPath=@tests/fixtures/subfolder1/subfolder2/subfolder3
+ * ~~~
  *
  * You can see all available templates by running command:
  *
- * ```
- * //list all templates under default template path (i.e. '@tests/unit/templates/fixtures')
+ * ~~~
+ * //list all templates under default template path (i.e. '@tests/fixtures/templates')
  * yii fixture/templates
  *
  * //list all templates under specified template path
@@ -146,11 +146,11 @@ class FixtureController extends \yii\console\controllers\FixtureController
     /**
      * @var string Alias to the template path, where all tables templates are stored.
      */
-    public $templatePath = '@tests/unit/templates/fixtures';
+    public $templatePath = '@tests/fixtures/templates';
     /**
      * @var string Alias to the fixture data path, where data files should be written.
      */
-    public $fixtureDataPath = '@tests/unit/fixtures/data';
+    public $fixtureDataPath = '@tests/fixtures/data';
     /**
      * @var string Language to use when generating fixtures data.
      */

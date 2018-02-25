@@ -34,7 +34,7 @@ echo $faker->text;
 在使用这个命令前，你需要对 [Faker](https://github.com/fzaninotto/Faker) 库有所了解（阅读手册），比如怎么通过给定的格式生成fixture模板文件。
 
 ```php
-// users.php 在模板目录里 (默认在 @tests/unit/templates/fixtures)
+// users.php 在模板目录里 (默认在 @tests/fixtures/templates)
 /**
  * @var $faker \Faker\Generator
  * @var $index integer
@@ -65,7 +65,7 @@ php yii fixture/generate users
 php yii fixture/generate users profiles teams
 ```
 
-在上面的代码中 `users` 是假数据模板的模板名称。运行上面的命令后，假数据会在假数据目录中生成 (默认在 `@tests/unit/fixtures` 文件夹)。
+在上面的代码中 `users` 是假数据模板的模板名称。运行上面的命令后，假数据会在假数据目录中生成 (默认在 `@tests/fixtures` 文件夹)。
 
 ```
 php yii fixture/generate-all
@@ -93,7 +93,7 @@ php yii fixture/generate-all --fixtureDataPath='@tests/acceptance/fixtures/data'
 运行下面的命令查看所有可用的模板
 
 ```
-# 列出默认模板目录的所有模板（默认使用 '@tests/unit/templates/fixtures' 目录）
+# 列出默认模板目录的所有模板（默认使用 '@tests/fixtures/templates' 目录）
 php yii fixture/templates
 
 # 列出指定目录下可用的模板
