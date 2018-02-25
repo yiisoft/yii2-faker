@@ -4,6 +4,7 @@ Yii Framework 2 faker extension Change Log
 2.1.0 under development
 -----------------------
 
+- Bug #33: Path inconsistences (ricpelo)
 - Chg: Required Yii framework version has been raised to '2.1.0' (klimov-paul)
 
 
