@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yiiunit\extensions\faker;
+namespace yiiunit\faker;
 
 use yii\di\Container;
 use yii\helpers\ArrayHelper;
