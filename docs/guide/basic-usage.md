@@ -4,7 +4,6 @@ Basic Usage
 Use ```Faker\Factory::create()``` to create and initialize a faker generator, which can generate data by accessing properties named after the type of data you want.
 
 ```php
-
 // use the factory to create a Faker\Generator instance
 $faker = Faker\Factory::create();
 
@@ -83,6 +82,7 @@ all fixtures and in each file there will be 3 rows (fixtures).
 ```
 php yii fixture/generate-all --count=3
 ```
+
 You can specify different options of this command:
 
 ```
@@ -112,27 +112,29 @@ After you created custom provider, for example:
 ```php
 class Book extends \Faker\Provider\Base
 {
-
     public function title($nbWords = 5)
     {
         $sentence = $this->generator->sentence($nbWords);
         return mb_substr($sentence, 0, mb_strlen($sentence) - 1);
     }
-
- }
+}
 ```
 
 You can use it by adding it to the `$providers` property of the current command. In your console.php config:
 
 ```php
-'controllerMap' => [
-    'fixture' => [
-        'class' => 'yii\faker\FixtureController',
-        'providers' => [
-            'app\tests\unit\faker\providers\Book',
+return [
+    'controllerMap' => [
+        'fixture' => [
+            'class' => 'yii\faker\FixtureController',
+            'providers' => [
+                'app\tests\unit\faker\providers\Book',
+            ],
         ],
+        // ...
     ],
-]
+    // ...
+];
 ```
 
 
@@ -142,11 +144,15 @@ Yii 2 Advanced Template
 If you want to run faker in the Yii 2 advanced template, you need to set `templatePath` and `fixtureDataPath`. For example if you want to setup common fixtures, use the following config in `console/config/main.php`:
 
 ```php
-'controllerMap' => [
-    'fixture' => [
-        'class' => 'yii\faker\FixtureController',
-        'templatePath' => '@common/tests/templates/fixtures',
-        'fixtureDataPath' => '@common/tests/fixtures/data',
+return [
+    'controllerMap' => [
+        'fixture' => [
+            'class' => 'yii\faker\FixtureController',
+            'templatePath' => '@common/tests/templates/fixtures',
+            'fixtureDataPath' => '@common/tests/fixtures/data',
+        ],
+        // ...
     ],
-]
+    // ...
+];
 ```

@@ -22,13 +22,13 @@ use yii\helpers\VarDumper;
  *
  * You should configure your application as follows (you can use any alias, not only "fixture"):
  *
- * ~~~
+ * ```php
  * 'controllerMap' => [
  *     'fixture' => [
  *         'class' => 'yii\faker\FixtureController',
  *     ],
  * ],
- * ~~~
+ * ```
  *
  * To start using the command you need to be familiar (read guide) with the Faker library and
  * generate fixtures template files, according to the given format:
@@ -54,20 +54,20 @@ use yii\helpers\VarDumper;
  *
  * After you prepared needed templates for tables you can simply generate your fixtures via command
  *
- * ~~~
+ * ```
  * yii fixture/generate user
  *
  * //generate fixtures from several templates, for example:
  * yii fixture/generate user profile team
- * ~~~
+ * ```
  *
  * In the code above "users" is template name, after this command run, new file named same as template
  * will be created under the `$fixtureDataPath` folder.
  * You can generate fixtures for all templates, for example:
  *
- * ~~~
+ * ```
  * yii fixture/generate-all
- * ~~~
+ * ```
  *
  * This command will generate fixtures for all template files that are stored under $templatePath and
  * store fixtures under `$fixtureDataPath` with file names same as templates names.
@@ -75,13 +75,13 @@ use yii\helpers\VarDumper;
  * You can specify how many fixtures per file you need by the second parameter. In the code below we generate
  * all fixtures and in each file there will be 3 rows (fixtures).
  *
- * ~~~
+ * ```
  * yii fixture/generate-all --count=3
- * ~~~
+ * ```
  *
  * You can specify different options of this command:
  *
- * ~~~
+ * ```
  * //generate fixtures in russian language
  * yii fixture/generate user --count=5 --language=ru_RU
  *
@@ -90,22 +90,22 @@ use yii\helpers\VarDumper;
  *
  * //generate fixtures into other folders
  * yii fixture/generate-all --fixtureDataPath=@tests/unit/fixtures/subfolder1/subfolder2/subfolder3
- * ~~~
+ * ```
  *
  * You can see all available templates by running command:
  *
- * ~~~
+ * ```
  * //list all templates under default template path (i.e. '@tests/unit/templates/fixtures')
  * yii fixture/templates
  *
  * //list all templates under specified template path
  * yii fixture/templates --templatePath='@app/path/to/my/custom/templates'
- * ~~~
+ * ```
  *
  * You also can create your own data providers for custom tables fields, see Faker library guide for more info (https://github.com/fzaninotto/Faker);
  * After you created custom provider, for example:
  *
- * ~~~
+ * ```php
  * class Book extends \Faker\Provider\Base
  * {
  *
@@ -116,11 +116,12 @@ use yii\helpers\VarDumper;
  *     }
  *
  * }
- * ~~~
+ * ```
  *
  * you can use it by adding it to the $providers property of the current command. In your console.php config:
  *
- * ~~~
+ * ```
+ * return [
  *    'controllerMap' => [
  *        'fixture' => [
  *            'class' => 'yii\faker\FixtureController',
@@ -128,8 +129,11 @@ use yii\helpers\VarDumper;
  *                'app\tests\unit\faker\providers\Book',
  *            ],
  *        ],
+ *        // ...
  *    ],
- * ~~~
+ *    // ...
+ * ];
+ * ```
  *
  * @property \Faker\Generator $generator This property is read-only.
  *
@@ -167,7 +171,7 @@ class FixtureController extends \yii\console\controllers\FixtureController
 
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function options($actionID)
     {
@@ -177,7 +181,7 @@ class FixtureController extends \yii\console\controllers\FixtureController
     }
     
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function beforeAction($action)
     {
@@ -185,9 +189,9 @@ class FixtureController extends \yii\console\controllers\FixtureController
             $this->checkPaths();
             $this->addProviders();
             return true;
-        } else {
-            return false;
         }
+
+        return false;
     }
 
     /**
@@ -208,13 +212,13 @@ class FixtureController extends \yii\console\controllers\FixtureController
      * Generates fixtures and fill them with Faker data.
      * For example,
      *
-     * ~~~
+     * ```
      * //generate fixtures in russian language
      * yii fixture/generate user --count=5 --language=ru_RU
      *
      * //generate several fixtures
      * yii fixture/generate user profile team
-     * ~~~
+     * ```
      *
      * @throws \yii\base\InvalidParamException
      * @throws \yii\console\Exception
@@ -489,5 +493,4 @@ class FixtureController extends \yii\console\controllers\FixtureController
 
         return $this->confirm('Generate above fixtures?');
     }
-
 }

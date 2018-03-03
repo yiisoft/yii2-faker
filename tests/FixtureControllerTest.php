@@ -1,4 +1,9 @@
 <?php
+/**
+ * @link http://www.yiiframework.com/
+ * @copyright Copyright (c) 2008 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
 
 namespace yiiunit\extensions\faker;
 
@@ -19,6 +24,9 @@ class FixtureControllerTest extends TestCase
     private $_fixtureController;
 
 
+    /**
+     * {@inheritdoc}
+     */
     protected function setUp()
     {
         parent::setUp();
@@ -38,6 +46,9 @@ class FixtureControllerTest extends TestCase
         ],['fixture-faker', Yii::$app]);
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function tearDown()
     {
         @unlink(Yii::getAlias('@runtime/faker/user.php'));
@@ -162,9 +173,7 @@ class FixtureControllerTest extends TestCase
 
 class FixtureConsoledController extends FixtureController
 {
-
     public function stdout($string)
     {
     }
-
 }
