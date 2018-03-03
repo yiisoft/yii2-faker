@@ -39,7 +39,7 @@ class FixtureControllerTest extends TestCase
         $this->mockApplication();
 
         $this->_fixtureController = Yii::createObject([
-            'class' => 'yiiunit\faker\FixtureConsoledController',
+            '__class' => \yiiunit\faker\FixtureConsoledController::class,
             'interactive' => false,
             'fixtureDataPath' => '@runtime/faker',
             'templatePath' => '@yiiunit/faker/data/templates'
@@ -102,8 +102,8 @@ class FixtureControllerTest extends TestCase
         $bookFilename = Yii::getAlias('@runtime/faker/book.php');
         $this->assertFileNotExists($bookFilename, 'file to be generated should not exist before');
 
-        $this->_fixtureController->providers[] = 'yiiunit\faker\data\providers\Book';
-        $this->_fixtureController->run('generate',['book']);
+        $this->_fixtureController->providers[] = \yiiunit\faker\data\providers\Book::class;
+        $this->_fixtureController->run('generate', ['book']);
         $this->assertFileExists($bookFilename, 'fixture template file should be generated');
     }
 

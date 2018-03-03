@@ -9,6 +9,7 @@ namespace yii\faker;
 
 use Yii;
 use yii\console\Exception;
+use yii\console\ExitCode;
 use yii\helpers\Console;
 use yii\helpers\FileHelper;
 use yii\helpers\VarDumper;
@@ -25,7 +26,7 @@ use yii\helpers\VarDumper;
  * ```php
  * 'controllerMap' => [
  *     'fixture' => [
- *         'class' => 'yii\faker\FixtureController',
+ *         '__class' => yii\faker\FixtureController::class,
  *     ],
  * ],
  * ```
@@ -124,9 +125,9 @@ use yii\helpers\VarDumper;
  * return [
  *    'controllerMap' => [
  *        'fixture' => [
- *            'class' => 'yii\faker\FixtureController',
+ *            '__class' => yii\faker\FixtureController::class,
  *            'providers' => [
- *                'app\tests\unit\faker\providers\Book',
+ *                app\tests\unit\faker\providers\Book::class,
  *            ],
  *        ],
  *        // ...
@@ -220,7 +221,7 @@ class FixtureController extends \yii\console\controllers\FixtureController
      * yii fixture/generate user profile team
      * ```
      *
-     * @throws \yii\base\InvalidParamException
+     * @throws \yii\base\InvalidArgumentException
      * @throws \yii\console\Exception
      */
     public function actionGenerate()
@@ -241,11 +242,11 @@ class FixtureController extends \yii\console\controllers\FixtureController
 
         if (!$foundTemplates) {
             $this->notifyNoTemplatesFound();
-            return static::EXIT_CODE_NORMAL;
+            return ExitCode::OK;
         }
 
         if (!$this->confirmGeneration($foundTemplates)) {
-            return static::EXIT_CODE_NORMAL;
+            return ExitCode::OK;
         }
 
         $templatePath = Yii::getAlias($this->templatePath);
@@ -261,6 +262,8 @@ class FixtureController extends \yii\console\controllers\FixtureController
         }
 
         $this->notifyTemplatesGenerated($generatedTemplates);
+
+        return ExitCode::OK;
     }
 
     /**
@@ -272,11 +275,11 @@ class FixtureController extends \yii\console\controllers\FixtureController
 
         if (!$foundTemplates) {
             $this->notifyNoTemplatesFound();
-            return static::EXIT_CODE_NORMAL;
+            return ExitCode::OK;
         }
 
         if (!$this->confirmGeneration($foundTemplates)) {
-            return static::EXIT_CODE_NORMAL;
+            return ExitCode::OK;
         }
 
         $templatePath = Yii::getAlias($this->templatePath);
@@ -292,6 +295,8 @@ class FixtureController extends \yii\console\controllers\FixtureController
         }
 
         $this->notifyTemplatesGenerated($generatedTemplates);
+
+        return ExitCode::OK;
     }
 
     /**

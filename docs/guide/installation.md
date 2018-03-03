@@ -26,7 +26,7 @@ To use this extension,  simply add the following code in your application config
 ```php
 'controllerMap' => [
     'fixture' => [
-        'class' => 'yii\faker\FixtureController',
+        '__class' => yii\faker\FixtureController::class,
     ],
 ],
 ```

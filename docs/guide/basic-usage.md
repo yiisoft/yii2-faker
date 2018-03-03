@@ -126,9 +126,9 @@ You can use it by adding it to the `$providers` property of the current command.
 return [
     'controllerMap' => [
         'fixture' => [
-            'class' => 'yii\faker\FixtureController',
+            '__class' => yii\faker\FixtureController::class,
             'providers' => [
-                'app\tests\unit\faker\providers\Book',
+                app\tests\unit\faker\providers\Book::class,
             ],
         ],
         // ...
@@ -147,7 +147,7 @@ If you want to run faker in the Yii 2 advanced template, you need to set `templa
 return [
     'controllerMap' => [
         'fixture' => [
-            'class' => 'yii\faker\FixtureController',
+            '__class' => yii\faker\FixtureController::class,
             'templatePath' => '@common/tests/templates/fixtures',
             'fixtureDataPath' => '@common/tests/fixtures/data',
         ],
