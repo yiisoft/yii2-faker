@@ -1,7 +1,7 @@
 Yii 2 Faker エクステンション
 ============================
 
-このエクステンションは Yii 2 に [`Faker`](https://github.com/fzaninotto/Faker) の fixture コマンドを提供します。
+このエクステンションは Yii 2 に [`Faker`](https://github.com/fzaninotto/Faker) の フィクスチャ・コマンドを提供します。
 
 始めよう
 --------
