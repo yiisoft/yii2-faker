@@ -1,7 +1,7 @@
 Basic Usage
 ===========
 
-Use ```Faker\Factory::create()``` to create and initialize a faker generator, which can generate data by accessing properties named after the type of data you want.
+Use `Faker\Factory::create()` to create and initialize a faker generator, which can generate data by accessing properties named after the type of data you want.
 
 ```php
 // use the factory to create a Faker\Generator instance
