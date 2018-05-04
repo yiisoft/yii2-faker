@@ -1,11 +1,9 @@
 基本的な使用方法
 ================
 
-```Faker\Factory::create()``` を使って、faker ジェネレータを作成して初期化します。
-この faker ジェネレータのプロパティの中から、あなたが必要とするデータのタイプを指定する名前のものを選んでアクセスすると、疑似データを生成することが出来ます。
+`Faker\Factory::create()` を使って、faker ジェネレータを作成して初期化します。この faker ジェネレータのプロパティの中から、あなたが必要とするデータのタイプを指定する名前のものを選んでアクセスすると、疑似データを生成することが出来ます。
 
 ```php
-
 // factory を使って Faker\Generator のインスタンスを作成する
 $faker = Faker\Factory::create();
 
@@ -32,7 +30,8 @@ echo $faker->text;
 
 `tests` というエイリアスをコンソールの構成情報で定義してください。
 例えば、`basic` プロジェクト・テンプレートであれば、`Yii::setAlias('tests', dirname(__DIR__) . '/tests/codeception');` を `console.php` 構成情報ファイルに追加します。
-このコマンドを使い始めるためには、[Faker](https://github.com/fzaninotto/Faker) ライブラリに慣れ親しんで (ガイドを読んでください)、指定された形式に従ってフィクスチャ・テンプレート・ファイルを生成しなければなりません。
+このコマンドを使い始めるためには、[Faker](https://github.com/fzaninotto/Faker) ライブラリに慣れ親しんで (ガイドを読んでください)、
+指定された形式に従ってフィクスチャ・テンプレート・ファイルを生成しなければなりません。
 
 ```php
 // テンプレート・パス (デフォルトでは、@tests/unit/templates/fixtures の下) の users.php ファイル
@@ -51,14 +50,12 @@ return [
 ```
 
 御覧のように、テンプレート・ファイルは単純な通常の PHP スクリプトです。
-スクリプトは「キー・値」ペアの配列を返さなければなりません。
-ここで、キーはテーブルのカラム名を表し、値は対応する値です。
+スクリプトは「キー・値」ペアの配列を返さなければなりません。ここで、キーはテーブルのカラム名を表し、値は対応する値です。
 `fixture/generate` コマンドを実行すると、生成されるデータ行のすべてについてこのスクリプトが実行されます。
 スクリプトの中では、次の二つの事前定義された変数を使用することが出来ます。
 
 * `$faker`: Faker ジェネレータのインスタンス。
-* `$index`: 現在のフィクスチャのインデックス。
-   例えば、user テーブルのために三つのフィクスチャを生成する必要がある場合、インデックスは 0..2 です。
+* `$index`: 現在のフィクスチャのインデックス。例えば、user テーブルのために三つのフィクスチャを生成する必要がある場合、インデックスは 0..2 です。
 
 このようなテンプレート・ファイルを使って、次のようなコマンドでフィクスチャを生成することが出来ます。
 
@@ -77,7 +74,8 @@ php yii fixture/generate users profiles teams
 php yii fixture/generate-all
 ```
 
-上記のコマンドは、テンプレート・パスに保存されている全てのテンプレートに対してフィクスチャを生成して、テンプレートの名前と同じファイル名でフィクスチャ・パスに保存します。
+上記のコマンドは、テンプレート・パスに保存されている全てのテンプレートに対してフィクスチャを生成して、
+テンプレートの名前と同じファイル名でフィクスチャ・パスに保存します。
 `--count` オプションによって、テンプレートごとに生成したいフィクスチャの数を指定することが出来ます。
 下記のコードでは、全てのテンプレートに対してフィクスチャを生成し、各フィクスチャ・ファイルについては 3 行 (3 個) のフィクスチャを得ることになります。
 
@@ -109,41 +107,41 @@ php yii fixture/templates --templatePath='@app/path/to/my/custom/templates'
 ```
 
 カスタム・テーブル・フィールドのためにあなた自身のデータ・プロバイダを作成することも出来ます。
-詳細な情報は [Faker](https://github.com/fzaninotto/Faker) ライブラリのガイドを参照してください。
-例えば、次のようにして、カスタム・プロバイダを作成します。
+詳細な情報は [Faker](https://github.com/fzaninotto/Faker) ライブラリのガイドを参照してください。例えば、次のようにして、カスタム・プロバイダを作成します。
 
 ```php
 class Book extends \Faker\Provider\Base
 {
-
     public function title($nbWords = 5)
     {
         $sentence = $this->generator->sentence($nbWords);
         return mb_substr($sentence, 0, mb_strlen($sentence) - 1);
     }
-
  }
 ```
 
 そして、これを console.php 構成情報ファイルで現在のコマンドの `$provider` プロパティに追加することによって、使用することが出来るようになります。
 
 ```php
-'controllerMap' => [
-    'fixture' => [
-        'class' => 'yii\faker\FixtureController',
-        'providers' => [
-            'app\tests\unit\faker\providers\Book',
+return [
+    'controllerMap' => [
+        'fixture' => [
+            'class' => 'yii\faker\FixtureController',
+            'providers' => [
+                'app\tests\unit\faker\providers\Book',
+            ],
         ],
+        // ...
     ],
-]
+    // ...
+];
 ```
 
 
 Yii 2 アドバンスト・テンプレート
 --------------------------------
 
-Yii 2 アドバンスト・テンプレートで faker を実行したい場合は、`templatePath` および `fixtureDataPath` を設定する必要があります。
-例えば、共通のフィクスチャを設定したい場合は、`console/config/main.php` で以下のように構成します。
+Yii 2 アドバンスト・テンプレートで faker を実行したい場合は、`templatePath` および `fixtureDataPath` を設定する必要があります。例えば、共通のフィクスチャを設定したい場合は、`console/config/main.php` で以下のように構成します。
 
 ```php
 return [
@@ -158,4 +156,3 @@ return [
     // ...
 ];
 ```
-
