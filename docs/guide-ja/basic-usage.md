@@ -35,7 +35,7 @@ echo $faker->text;
 このコマンドを使い始めるためには、[Faker](https://github.com/fzaninotto/Faker) ライブラリに慣れ親しんで (ガイドを読んでください)、指定された形式に従ってフィクスチャテンプレートファイルを生成しなければなりません。
 
 ```php
-// テンプレートパス (デフォルトでは、@tests/unit/templates/fixtures の下) の users.php ファイル
+// テンプレートパス (デフォルトでは、@tests/fixtures/templates の下) の users.php ファイル
 /**
  * @var $faker \Faker\Generator
  * @var $index integer
@@ -71,7 +71,7 @@ php yii fixture/generate users profiles teams
 ```
 
 上記のコードで `users` がテンプレートの名前です。
-このコマンドを実行した後、テンプレートと同じ名前のファイルがフィクスチャパス (`@tests/unit/fixtures` フォルダ) に生成されます。
+このコマンドを実行した後、テンプレートと同じ名前のファイルがフィクスチャパス (`@tests/fixtures` フォルダ) に生成されます。
 
 ```
 php yii fixture/generate-all
@@ -101,7 +101,7 @@ php yii fixture/generate-all --fixtureDataPath='@tests/acceptance/fixtures/data'
 次のコマンドを実行すると、利用可能な全てのテンプレートを見ることが出来ます。
 
 ```
-# デフォルトのテンプレートパス (すなわち、'@tests/unit/templates/fixtures') の下にある全てのテンプレートをリストする
+# デフォルトのテンプレートパス (すなわち、'@tests/fixtures/templates') の下にある全てのテンプレートをリストする
 php yii fixture/templates
 
 # 指定したテンプレートパスの下にある全てのテンプレートをリストする

@@ -34,7 +34,7 @@ To start using this command you need to be familiar (read guide) with the [Faker
 generate fixture template files, according to the given format:
 
 ```php
-// users.php file under the template path (by default @tests/unit/templates/fixtures)
+// users.php file under the template path (by default @tests/fixtures/templates)
 /**
  * @var $faker \Faker\Generator
  * @var $index integer
@@ -68,7 +68,7 @@ php yii fixture/generate users profiles teams
 ```
 
 In the code above `users` is a template name. After running this command, a new file with the same template name
-will be created under the fixture path (`@tests/unit/fixtures` folder).
+will be created under the fixture path (`@tests/fixtures` folder).
 
 ```
 php yii fixture/generate-all
@@ -99,7 +99,7 @@ php yii fixture/generate-all --fixtureDataPath='@tests/acceptance/fixtures/data'
 You can see all available templates by running command:
 
 ```
-# list all templates under the default template path (i.e. '@tests/unit/templates/fixtures')
+# list all templates under the default template path (i.e. '@tests/fixtures/templates')
 php yii fixture/templates
 
 # list all templates under the specified template path
