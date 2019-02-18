@@ -8,6 +8,7 @@ php:
   - 7.0
   - 7.1
   - 7.2
+  - 7.3
 
 # faster builds on new travis setup not using sudo
 sudo: false
@@ -29,7 +30,7 @@ before_script:
     fi
 
 script:
-  - phpunit $PHPUNIT_FLAGS
+  - ./vendor/bin/phpunit $PHPUNIT_FLAGS
 
 after_script:
   - |
