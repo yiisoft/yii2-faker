@@ -4,7 +4,7 @@ Yii Framework 2 faker extension Change Log
 2.0.5 under development
 -----------------------
 
-- no changes in this release.
+- Chg: Updated faker version to 1.9 (samdark)
 
 
 2.0.4 February 19, 2018
