@@ -14,7 +14,7 @@ Documentation is at [docs/guide/README.md](docs/guide/README.md).
 
 [![Latest Stable Version](https://img.shields.io/packagist/v/yiisoft/yii2-faker.svg)](https://packagist.org/packages/yiisoft/yii2-faker)
 [![Total Downloads](https://img.shields.io/packagist/dt/yiisoft/yii2-faker.svg)](https://packagist.org/packages/yiisoft/yii2-faker)
-[![Build Status](https://travis-ci.com/yiisoft/yii2-faker.svg?branch=master)](https://travis-ci.com/yiisoft/yii2-faker)
+[![Build Status](https://github.com/yiisoft/yii2-faker/workflows/build/badge.svg)](https://github.com/yiisoft/yii2-faker/actions)
 
 
 Installation
