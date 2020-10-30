@@ -4,7 +4,7 @@ Yii Framework 2 faker extension Change Log
 2.0.5 under development
 -----------------------
 
-- Chg: Switch to faker/faker, update to version to 1.10 to ensure PHP 8 compatibility (samdark)
+- Chg: Switch to faker/faker to ensure PHP 8 compatibility (samdark)
 
 
 2.0.4 February 19, 2018
