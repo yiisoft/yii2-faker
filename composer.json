@@ -19,7 +19,7 @@
     ],
     "require": {
         "yiisoft/yii2": "~2.0.0",
-        "fakerphp/faker": "~1.10"
+        "fakerphp/faker": "~1.9|~1.10"
     },
     "require-dev": {
         "cweagans/composer-patches": "^1.7",
