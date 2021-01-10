@@ -31,7 +31,7 @@ echo $faker->text;
 
 在命令行应用里定义 `tests` 别名。比如，在 `basic` 为模板的项目里，别名应该加在 `console.php` 配置文件中：
 `Yii::setAlias('tests', __DIR__ . '/../tests');`
-在使用这个命令前，你需要对 [Faker](https://github.com/fzaninotto/Faker) 库有所了解（阅读手册），比如怎么通过给定的格式生成fixture模板文件。
+在使用这个命令前，你需要对 [Faker](https://github.com/FakerPHP/Faker) 库有所了解（阅读手册），比如怎么通过给定的格式生成fixture模板文件。
 
 ```php
 // users.php 在模板目录里 (默认在 @tests/unit/templates/fixtures)
