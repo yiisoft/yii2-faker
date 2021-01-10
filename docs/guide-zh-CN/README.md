@@ -1,7 +1,7 @@
 为 Yii 2 开发的Faker包适配
 =========================
 
-这个扩展为Yii 2提供了 [`Faker`](https://github.com/fzaninotto/Faker) fixture 命令。
+这个扩展为Yii 2提供了 [`Faker`](https://github.com/FakerPHP/Faker) fixture 命令。
 
 开始
 ---------------
