@@ -30,7 +30,7 @@ echo $faker->text;
 
 `tests` というエイリアスをコンソールの構成情報で定義してください。
 例えば、`basic` プロジェクト・テンプレートであれば、`Yii::setAlias('tests', dirname(__DIR__) . '/tests/codeception');` を `console.php` 構成情報ファイルに追加します。
-このコマンドを使い始めるためには、[Faker](https://github.com/fzaninotto/Faker) ライブラリに慣れ親しんで (ガイドを読んでください)、
+このコマンドを使い始めるためには、[Faker](https://github.com/FakerPHP/Faker) ライブラリに慣れ親しんで (ガイドを読んでください)、
 指定された形式に従ってフィクスチャ・テンプレート・ファイルを生成しなければなりません。
 
 ```php
