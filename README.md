@@ -15,7 +15,12 @@ Documentation is at [docs/guide/README.md](docs/guide/README.md).
 [![Latest Stable Version](https://img.shields.io/packagist/v/yiisoft/yii2-faker.svg)](https://packagist.org/packages/yiisoft/yii2-faker)
 [![Total Downloads](https://img.shields.io/packagist/dt/yiisoft/yii2-faker.svg)](https://packagist.org/packages/yiisoft/yii2-faker)
 [![Build Status](https://github.com/yiisoft/yii2-faker/workflows/build/badge.svg)](https://github.com/yiisoft/yii2-faker/actions)
+[![codecov](https://codecov.io/gh/yiisoft/yii2-faker/graph/badge.svg?token=14L5SQ0nY7)](https://codecov.io/gh/yiisoft/yii2-faker)
 
+Requirements
+------------
+
+- PHP 7.3 or higher.
 
 Installation
 ------------
