@@ -3,7 +3,7 @@
 
 ## 通过Composer安装
 
-推荐的安装方式是通过 [composer](http://getcomposer.org/download/) 工具安装。
+推荐的安装方式是通过 [composer](https://getcomposer.org/download/) 工具安装。
 
 直接使用composer命令安装
 
