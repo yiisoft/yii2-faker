@@ -1,8 +1,8 @@
 <?php
 /**
- * @link http://www.yiiframework.com/
+ * @link https://www.yiiframework.com/
  * @copyright Copyright (c) 2008 Yii Software LLC
- * @license http://www.yiiframework.com/license/
+ * @license https://www.yiiframework.com/license/
  */
 
 namespace yii\faker;
@@ -179,7 +179,7 @@ class FixtureController extends \yii\console\controllers\FixtureController
             'templatePath', 'language', 'fixtureDataPath', 'count'
         ]);
     }
-    
+
     /**
      * {@inheritdoc}
      */
@@ -287,7 +287,7 @@ class FixtureController extends \yii\console\controllers\FixtureController
         $generatedTemplates = [];
 
         foreach ($foundTemplates as $templateName) {
-            $this->generateFixtureFile($templateName, $templatePath, $fixtureDataPath);            
+            $this->generateFixtureFile($templateName, $templatePath, $fixtureDataPath);
             $generatedTemplates[] = $templateName;
         }
 
