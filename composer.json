@@ -18,12 +18,12 @@
         }
     ],
     "require": {
-        "yiisoft/yii2": "~2.0.0",
-        "fakerphp/faker": "~1.9|~1.10"
+        "php": ">=8.1",
+        "fakerphp/faker": "~1.9|~1.10",
+        "yiisoft/yii2": "2.2.x-dev"
     },
     "require-dev": {
-        "cweagans/composer-patches": "^1.7",
-        "phpunit/phpunit": "4.8.34"
+        "phpunit/phpunit": "^9.6"
     },
     "autoload": {
         "psr-4": {"yii\\faker\\": "src"}
@@ -31,27 +31,10 @@
     "extra": {
         "branch-alias": {
             "dev-master": "2.0.x-dev"
-        },
-        "composer-exit-on-patch-failure": true,
-        "patches": {
-            "phpunit/phpunit-mock-objects": {
-                "Fix PHP 7 and 8 compatibility": "https://yiisoft.github.io/phpunit-patches/phpunit_mock_objects.patch"
-            },
-            "phpunit/phpunit": {
-                "Fix PHP 7 compatibility": "https://yiisoft.github.io/phpunit-patches/phpunit_php7.patch",
-                "Fix PHP 8 compatibility": "https://yiisoft.github.io/phpunit-patches/phpunit_php8.patch"
-            }
         }
     },
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://asset-packagist.org"
-        }
-    ],
     "config": {
         "allow-plugins": {
-            "cweagans/composer-patches": true,
             "yiisoft/yii2-composer": true
         }
     }

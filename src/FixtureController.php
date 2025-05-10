@@ -9,6 +9,7 @@ namespace yii\faker;
 
 use Yii;
 use yii\console\Exception;
+use yii\console\ExitCode;
 use yii\helpers\Console;
 use yii\helpers\FileHelper;
 use yii\helpers\VarDumper;
@@ -241,11 +242,11 @@ class FixtureController extends \yii\console\controllers\FixtureController
 
         if (!$foundTemplates) {
             $this->notifyNoTemplatesFound();
-            return static::EXIT_CODE_NORMAL;
+            return ExitCode::OK;
         }
 
         if (!$this->confirmGeneration($foundTemplates)) {
-            return static::EXIT_CODE_NORMAL;
+            return ExitCode::OK;
         }
 
         $templatePath = Yii::getAlias($this->templatePath);
@@ -272,11 +273,11 @@ class FixtureController extends \yii\console\controllers\FixtureController
 
         if (!$foundTemplates) {
             $this->notifyNoTemplatesFound();
-            return static::EXIT_CODE_NORMAL;
+            return ExitCode::OK;
         }
 
         if (!$this->confirmGeneration($foundTemplates)) {
-            return static::EXIT_CODE_NORMAL;
+            return ExitCode::OK;
         }
 
         $templatePath = Yii::getAlias($this->templatePath);
