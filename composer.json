@@ -1,7 +1,11 @@
 {
     "name": "yiisoft/yii2-faker",
     "description": "Fixture generator. The Faker integration for the Yii framework.",
-    "keywords": ["yii2", "faker", "fixture"],
+    "keywords": [
+        "yii2",
+        "faker",
+        "fixture"
+    ],
     "type": "yii2-extension",
     "license": "BSD-3-Clause",
     "support": {
@@ -17,6 +21,7 @@
             "email": "mark.github@yandex.ru"
         }
     ],
+    "minimum-stability": "dev",
     "require": {
         "php": ">=8.1",
         "fakerphp/faker": "~1.9|~1.10",
@@ -30,7 +35,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "2.0.x-dev"
+            "dev-master": "22.0.x-dev"
         }
     },
     "config": {
