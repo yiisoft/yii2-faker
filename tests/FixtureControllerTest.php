@@ -8,6 +8,7 @@
 namespace yiiunit\faker;
 
 use Yii;
+use yii\console\Exception as ConsoleException;
 use yii\faker\FixtureController;
 
 /**
@@ -27,7 +28,7 @@ class FixtureControllerTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -49,7 +50,7 @@ class FixtureControllerTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    public function tearDown()
+    public function tearDown(): void
     {
         @unlink(Yii::getAlias('@runtime/faker/user.php'));
         @unlink(Yii::getAlias('@runtime/faker/profile.php'));
@@ -60,7 +61,7 @@ class FixtureControllerTest extends TestCase
     public function testGenerateOne()
     {
         $filename = Yii::getAlias('@runtime/faker/user.php');
-        $this->assertFileNotExists($filename, 'file to be generated should not exist before');
+        $this->assertFileDoesNotExist($filename, 'file to be generated should not exist before');
 
         $this->_fixtureController->actionGenerate('user');
         $this->assertFileExists($filename, 'fixture template file should be generated');
@@ -80,10 +81,10 @@ class FixtureControllerTest extends TestCase
     public function testGenerateBoth()
     {
         $userFilename = Yii::getAlias('@runtime/faker/user.php');
-        $this->assertFileNotExists($userFilename, 'file to be generated should not exist before');
+        $this->assertFileDoesNotExist($userFilename, 'file to be generated should not exist before');
 
         $profileFilename = Yii::getAlias('@runtime/faker/profile.php');
-        $this->assertFileNotExists($profileFilename, 'file to be generated should not exist before');
+        $this->assertFileDoesNotExist($profileFilename, 'file to be generated should not exist before');
 
         $this->_fixtureController->actionGenerate('user', 'profile');
         $this->assertFileExists($userFilename, 'fixture template file should be generated');
@@ -94,32 +95,32 @@ class FixtureControllerTest extends TestCase
     {
         $fileName = Yii::getAlias('@runtime/faker/not_existing_template.php');
         $this->_fixtureController->actionGenerate('not_existing_template');
-        $this->assertFileNotExists($fileName, 'not existing template should not be generated');
+        $this->assertFileDoesNotExist($fileName, 'not existing template should not be generated');
     }
 
     public function testGenerateProvider()
     {
         $bookFilename = Yii::getAlias('@runtime/faker/book.php');
-        $this->assertFileNotExists($bookFilename, 'file to be generated should not exist before');
+        $this->assertFileDoesNotExist($bookFilename, 'file to be generated should not exist before');
 
         $this->_fixtureController->providers[] = 'yiiunit\faker\data\providers\Book';
         $this->_fixtureController->run('generate',['book']);
         $this->assertFileExists($bookFilename, 'fixture template file should be generated');
     }
 
-    /**
-     * @expectedException \yii\console\Exception
-     */
     public function testNothingToGenerateException()
     {
+        $this->expectException(ConsoleException::class);
+        $this->expectExceptionMessage('You should specify input fixtures template files');
+
         $this->_fixtureController->actionGenerate();
     }
 
-    /**
-     * @expectedException \yii\console\Exception
-     */
     public function testWrongTemplatePathException()
     {
+        $this->expectException(ConsoleException::class);
+        $this->expectExceptionMessage('The template path "@not/existing/fixtures/templates/path" does not exist');
+
         $this->_fixtureController->templatePath = '@not/existing/fixtures/templates/path';
         $this->_fixtureController->run('generate',['user']);
     }
@@ -127,7 +128,7 @@ class FixtureControllerTest extends TestCase
     public function testGenerateParticularTimes()
     {
         $filename = Yii::getAlias('@runtime/faker/user.php');
-        $this->assertFileNotExists($filename, 'file to be generated should not exist before');
+        $this->assertFileDoesNotExist($filename, 'file to be generated should not exist before');
 
         $this->_fixtureController->count = 5;
         $this->_fixtureController->actionGenerate('user');
@@ -140,7 +141,7 @@ class FixtureControllerTest extends TestCase
     public function testGenerateParticlularLanguage()
     {
         $filename = Yii::getAlias('@runtime/faker/profile.php');
-        $this->assertFileNotExists($filename, 'file to be generated should not exist before');
+        $this->assertFileDoesNotExist($filename, 'file to be generated should not exist before');
 
         $this->_fixtureController->language = 'ru_RU';
         $this->_fixtureController->actionGenerate('profile');
@@ -153,13 +154,13 @@ class FixtureControllerTest extends TestCase
     public function testGenerateAll()
     {
         $userFilename = Yii::getAlias('@runtime/faker/user.php');
-        $this->assertFileNotExists($userFilename, 'file to be generated should not exist before');
+        $this->assertFileDoesNotExist($userFilename, 'file to be generated should not exist before');
 
         $profileFilename = Yii::getAlias('@runtime/faker/profile.php');
-        $this->assertFileNotExists($profileFilename, 'file to be generated should not exist before');
+        $this->assertFileDoesNotExist($profileFilename, 'file to be generated should not exist before');
 
         $bookFilename = Yii::getAlias('@runtime/faker/book.php');
-        $this->assertFileNotExists($bookFilename, 'file to be generated should not exist before');
+        $this->assertFileDoesNotExist($bookFilename, 'file to be generated should not exist before');
 
         $this->_fixtureController->providers[] = 'yiiunit\faker\data\providers\Book';
         $this->_fixtureController->run('generate-all');
