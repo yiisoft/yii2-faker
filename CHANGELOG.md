@@ -4,7 +4,7 @@ Yii Framework 2 faker extension Change Log
 2.0.6 under development
 -----------------------
 
-- no changes in this release.
+- Enh #62: Remove unnecessary files from Composer package (@s1lver)
 
 
 2.0.5 November 10, 2020
