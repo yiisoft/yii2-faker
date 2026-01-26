@@ -5,9 +5,9 @@ Yii Framework 2 faker extension Change Log
 -----------------------
 
 - Enh #62: Remove unnecessary files from Composer package (@s1lver)
-- Enh #: Static analysis with PHPStan has been added (@s1lver)
-- Enh #: Raise min version to PHP 7.4 (@s1lver)
-- Enh #: Applying Yii2 coding standards (@s1lver)
+- Enh #63: Static analysis with PHPStan has been added (@s1lver)
+- Enh #63: Raise min version to PHP 7.4 (@s1lver)
+- Enh #63: Applying Yii2 coding standards (@s1lver)
 
 
 2.0.5 November 10, 2020
