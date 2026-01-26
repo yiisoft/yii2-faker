@@ -15,10 +15,15 @@ Documentation is at [docs/guide/README.md](docs/guide/README.md).
 [![Latest Stable Version](https://img.shields.io/packagist/v/yiisoft/yii2-faker.svg)](https://packagist.org/packages/yiisoft/yii2-faker)
 [![Total Downloads](https://img.shields.io/packagist/dt/yiisoft/yii2-faker.svg)](https://packagist.org/packages/yiisoft/yii2-faker)
 [![Build Status](https://github.com/yiisoft/yii2-faker/workflows/build/badge.svg)](https://github.com/yiisoft/yii2-faker/actions)
+[![codecov](https://codecov.io/gh/yiisoft/yii2-faker/graph/badge.svg)](https://codecov.io/gh/yiisoft/yii2-faker)
 
 
 Installation
 ------------
+
+> [!IMPORTANT]
+> - The minimum required [PHP](https://www.php.net/) version is PHP `7.4`.
+> - It works best with PHP `8`.
 
 The preferred way to install this extension is through [composer](https://getcomposer.org/download/).
 
