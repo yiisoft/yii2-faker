@@ -25,6 +25,7 @@ phpunit.phar
 /phpunit.xml
 /tests/runtime
 /tests/data/config.local.php
+.phpunit.result.cache
 
 # docker
 /tests/docker

@@ -1,5 +1,5 @@
 on:
-  pull_request:
+  pull_request: &ignore-paths
     paths-ignore:
       - 'docs/**'
       - 'README.md'
@@ -7,13 +7,7 @@ on:
       - '.gitignore'
       - '.gitattributes'
 
-  push:
-    paths-ignore:
-      - 'docs/**'
-      - 'README.md'
-      - 'CHANGELOG.md'
-      - '.gitignore'
-      - '.gitattributes'
+  push: *ignore-paths
 
 name: build
 
@@ -24,4 +18,4 @@ jobs:
       os: >-
         ['ubuntu-latest']
       php: >-
-        ['5.4', '5.5', '5.6', '7.0', '7.1', '7.2', '7.3', '7.4', '8.0', '8.1', '8.2', '8.3', '8.4']
+        ['7.4', '8.0', '8.1', '8.2', '8.3', '8.4']

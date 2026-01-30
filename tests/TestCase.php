@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @link https://www.yiiframework.com/
  * @copyright Copyright (c) 2008 Yii Software LLC
@@ -20,7 +21,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
      * Clean up after test.
      * By default the application created with [[mockApplication]] will be destroyed.
      */
-    protected function tearDown()
+    protected function tearDown(): void
     {
         parent::tearDown();
         $this->destroyApplication();
@@ -32,7 +33,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
      * @param array $config The application configuration, if needed
      * @param string $appClass name of the application class to create
      */
-    protected function mockApplication($config = [], $appClass = '\yii\console\Application')
+    protected function mockApplication($config = [], $appClass = '\yii\console\Application'): void
     {
         new $appClass(ArrayHelper::merge([
             'id' => 'testapp',
@@ -41,7 +42,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
         ], $config));
     }
 
-    protected function mockWebApplication($config = [], $appClass = '\yii\web\Application')
+    protected function mockWebApplication($config = [], $appClass = '\yii\web\Application'): void
     {
         new $appClass(ArrayHelper::merge([
             'id' => 'testapp',
@@ -50,7 +51,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
             'components' => [
                 'request' => [
                     'cookieValidationKey' => 'wefJDF8sfdsfSDefwqdxj9oq',
-                    'scriptFile' => __DIR__ .'/index.php',
+                    'scriptFile' => __DIR__ . '/index.php',
                     'scriptUrl' => '/index.php',
                 ],
             ]
@@ -60,7 +61,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
     /**
      * Destroys application in Yii::$app by setting it to null.
      */
-    protected function destroyApplication()
+    protected function destroyApplication(): void
     {
         Yii::$app = null;
         Yii::$container = new Container();

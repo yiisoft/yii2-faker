@@ -2,7 +2,7 @@
 
 namespace yiiunit\faker\data\providers;
 
-use \Faker\Provider\Base;
+use Faker\Provider\Base;
 
 class Book extends Base
 {
