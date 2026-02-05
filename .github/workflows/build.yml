@@ -2,10 +2,17 @@ on:
   pull_request: &ignore-paths
     paths-ignore:
       - 'docs/**'
+      - '.github/CONTRIBUTING.md'
+      - '.github/FUNDING.yml'
+      - '.github/SECURITY.md'
       - 'README.md'
       - 'CHANGELOG.md'
+      - 'LICENSE.md'
       - '.gitignore'
       - '.gitattributes'
+      - '.editorconfig'
+      - 'docker-compose.yml'
+      - 'Makefile'
 
   push: *ignore-paths
 
@@ -13,9 +20,6 @@ name: build
 
 jobs:
   phpunit:
-    uses: yiisoft/actions/.github/workflows/phpunit.yml@master
-    with:
-      os: >-
-        ['ubuntu-latest']
-      php: >-
-        ['7.4', '8.0', '8.1', '8.2', '8.3', '8.4']
+    uses: yiisoft/yii2-actions/.github/workflows/phpunit.yml@master
+    secrets:
+      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
