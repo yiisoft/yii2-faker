@@ -8,7 +8,6 @@ Yii Framework 2 faker extension Change Log
 - Enh #63: Static analysis with PHPStan has been added (@s1lver)
 - Enh #63: Raise min version to PHP 7.4 (@s1lver)
 - Enh #63: Applying Yii2 coding standards (@s1lver)
-- Bug #TBD: Fix `@property` annotations in `FixtureController` (mspirkov)
 
 
 2.0.5 November 10, 2020
