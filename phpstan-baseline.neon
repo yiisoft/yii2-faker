@@ -1,8 +1,8 @@
 parameters:
 	ignoreErrors:
 		-
-			message: '#^Class yii\\faker\\FixtureController extends generic class yii\\console\\controllers\\FixtureController but does not specify its types\: T$#'
-			identifier: missingType.generics
+			message: '#^Cannot access property \$language on yii\\console\\Application\|yii\\web\\Application\<yii\\web\\IdentityInterface\>\|null\.$#'
+			identifier: property.nonObject
 			count: 1
 			path: src/FixtureController.php
 
@@ -145,12 +145,6 @@ parameters:
 			path: tests/TestCase.php
 
 		-
-			message: '#^Static property yii\\BaseYii\<yii\\web\\IdentityInterface\>\:\:\$app \(yii\\console\\Application\|yii\\web\\Application\<yii\\web\\IdentityInterface\>\) does not accept null\.$#'
-			identifier: assign.propertyType
-			count: 1
-			path: tests/TestCase.php
-
-		-
 			message: '#^Method yiiunit\\faker\\data\\providers\\Book\:\:title\(\) has no return type specified\.$#'
 			identifier: missingType.return
 			count: 1
@@ -181,6 +175,12 @@ parameters:
 			path: tests/data/templates/book.php
 
 		-
+			message: '#^Cannot call method getSecurity\(\) on yii\\console\\Application\|yii\\web\\Application\<yii\\web\\IdentityInterface\>\|null\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: tests/data/templates/profile.php
+
+		-
 			message: '#^PHPDoc tag @var has invalid value \(\$faker \\Faker\\Generator\)\: Unexpected token "\$faker", expected type at offset 12 on line 2$#'
 			identifier: phpDoc.parseError
 			count: 1
@@ -197,6 +197,12 @@ parameters:
 			identifier: variable.undefined
 			count: 3
 			path: tests/data/templates/profile.php
+
+		-
+			message: '#^Cannot call method getSecurity\(\) on yii\\console\\Application\|yii\\web\\Application\<yii\\web\\IdentityInterface\>\|null\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: tests/data/templates/user.php
 
 		-
 			message: '#^PHPDoc tag @var has invalid value \(\$faker \\Faker\\Generator\)\: Unexpected token "\$faker", expected type at offset 12 on line 2$#'

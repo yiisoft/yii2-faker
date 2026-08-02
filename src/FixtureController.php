@@ -136,7 +136,7 @@ use yii\helpers\VarDumper;
  * ];
  * ```
  *
- * @property-read \Faker\Generator $generator This property is read-only.
+ * @property-read \Faker\Generator $generator
  *
  * @author Mark Jebri <mark.github@yandex.ru>
  * @since 2.0.0
