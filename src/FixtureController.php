@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @link https://www.yiiframework.com/
  * @copyright Copyright (c) 2008 Yii Software LLC
@@ -136,7 +137,7 @@ use yii\helpers\VarDumper;
  * ];
  * ```
  *
- * @property-read \Faker\Generator $generator This property is read-only.
+ * @property-read \Faker\Generator $generator
  *
  * @author Mark Jebri <mark.github@yandex.ru>
  * @since 2.0.0
@@ -221,7 +222,7 @@ class FixtureController extends \yii\console\controllers\FixtureController
      * yii fixture/generate user profile team
      * ```
      *
-     * @throws \yii\base\InvalidParamException
+     * @throws \yii\base\InvalidArgumentException
      * @throws \yii\console\Exception
      */
     public function actionGenerate()
@@ -344,7 +345,7 @@ class FixtureController extends \yii\console\controllers\FixtureController
      */
     protected function notifyTemplatesCanBeGenerated($templatesNames)
     {
-        $this->stdout("Template files path: ", Console::FG_YELLOW);
+        $this->stdout('Template files path: ', Console::FG_YELLOW);
         $this->stdout(Yii::getAlias($this->templatePath) . "\n\n", Console::FG_GREEN);
 
         foreach ($templatesNames as $name) {
@@ -381,10 +382,10 @@ class FixtureController extends \yii\console\controllers\FixtureController
 
         foreach ($files as $fileName) {
             // strip templatePath from current template's full path
-            $relativeName = str_replace(Yii::getAlias($this->templatePath) . DIRECTORY_SEPARATOR, "", $fileName);
+            $relativeName = str_replace(Yii::getAlias($this->templatePath) . DIRECTORY_SEPARATOR, '', $fileName);
             $relativeDir = dirname($relativeName) == '.' ? '' : dirname($relativeName) . '/';
             // strip extension
-            $relativeName = $relativeDir . basename($relativeName,'.php');
+            $relativeName = $relativeDir . basename($relativeName, '.php');
             $foundTemplates[] = $relativeName;
         }
 
@@ -466,7 +467,7 @@ class FixtureController extends \yii\console\controllers\FixtureController
         $content = $this->exportFixtures($fixtures);
 
         // data file full path
-        $dataFile = $fixtureDataPath . '/'. $templateName . '.php';
+        $dataFile = $fixtureDataPath . "/$templateName.php";
 
         // data file directory, create if it doesn't exist
         $dataFileDir = dirname($dataFile);
