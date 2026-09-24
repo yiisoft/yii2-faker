@@ -156,7 +156,7 @@ class FixtureController extends \yii\console\controllers\FixtureController
      */
     public $language;
     /**
-     * @var integer total count of data per fixture. Defaults to 2.
+     * @var int total count of data per fixture. Defaults to 2.
      */
     public $count = 2;
     /**
